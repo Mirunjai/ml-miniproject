@@ -25,7 +25,7 @@ The deliverable includes an out-of-memory safe CPU training pipeline tailored to
 | Role | Student Name | SRN | Section & Team ID |
 | :--- | :--- | :--- | :--- |
 | **Student 1** | **MIRUNJAI SURESH KUMAR** | `PES1UG24AM161` | Sec-C, Team C-22 |
-| **Student 2** | **MOHAMMED SINAN M** | `PES1UG24AM165` | Sec-C, Team C-22 |
+| **Student 2** | **MOHAMMED SINAN M T** | `PES1UG24AM165` | Sec-C, Team C-22 |
 
 * **Course:** UE24CS352A — Machine Learning
 * **Department:** Department of Computer Science and Engineering
