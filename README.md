@@ -138,20 +138,15 @@ ml-miniproject/
 │   └── config.yaml                     # Pipeline configuration
 ├── docs/
 │   ├── report.pdf                      # Submission-ready technical report (PDF)
-│   ├── report.md                       # Academic two-page report (Markdown source)
 │   └── Structural_Damage_Recognition_Presentation.pptx # Review presentation slide deck
 ├── models/
 │   └── mobilenet_v2_damage_classifier.keras # Trained unified Keras model (~10.1 MB)
-├── notebooks/
-│   └── 02_train_model_colab.ipynb      # Google Colab GPU training notebook
 ├── outputs/
 │   ├── metrics/                        # test_metrics.json, classification_report.txt, training_history.json
 │   └── plots/                          # confusion_matrix.png, roc_curve.png, training_curves.png
 ├── scripts/
 │   ├── inspect_dataset.py              # Dataset sanity check & sample visualization
 │   ├── train_local_cached.py           # Resumable feature extraction & classifier training
-│   ├── generate_pdf_report.py          # ReportLab PDF report generator
-│   └── generate_pptx_presentation.py   # PowerPoint slide generator
 ├── src/structural_damage/
 │   ├── __init__.py                     # Module interface
 │   ├── preprocessing.py                # Caffe restoration & inference normalization
@@ -167,11 +162,6 @@ ml-miniproject/
 │   ├── test_batch_loader.py            # Unit tests for batch generator
 │   ├── test_dataset_metadata.py        # Unit tests for header validation
 │   └── test_resumable_cache.py         # Unit tests for resumable extraction
-└── temp_local/                         # Ignored by git (local-only storage)
-    ├── data/                           # Raw .npy arrays (~7.46 GB total)
-    ├── cache/                          # Extracted bottleneck feature caches (~68 MB)
-    ├── scratch/                        # Temporary scripts
-    └── archived_materials/             # Reference papers, rubrics, and project archives
 ```
 
 ---
@@ -207,15 +197,6 @@ python scripts/inspect_dataset.py
 
 # 2. Reproduce feature extraction & training (resumes from disk if cache exists)
 python scripts/train_local_cached.py
-```
-
-### E. Regenerate Report & Presentation Deliverables
-```bash
-# Regenerate two-page PDF report
-python scripts/generate_pdf_report.py
-
-# Regenerate PowerPoint review deck
-python scripts/generate_pptx_presentation.py
 ```
 
 ---
