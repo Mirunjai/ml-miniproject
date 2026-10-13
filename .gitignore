@@ -1,0 +1,78 @@
+# ── Local large files & scratch ───────────────────────────────────────
+temp_local/
+*.npy
+*.npz
+data/*.npy
+data/*.npz
+
+# ── Feature caches & temporary model checkpoints ─────────────────────
+outputs/cache/
+checkpoints/
+saved_model/
+
+# Allow the trained model in models/ (~10.1 MB, well within GitHub limit)
+*.keras
+*.h5
+*.hdf5
+*.pb
+*.tflite
+!models/mobilenet_v2_damage_classifier.keras
+
+# ── Archives ──────────────────────────────────────────────────────────
+*.zip
+*.tar.gz
+*.tar
+*.rar
+*.7z
+
+# ── Python & Bytecode ─────────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+dist/
+build/
+*.egg
+.eggs/
+
+# ── Testing & Type Checking ───────────────────────────────────────────
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# ── Environments ──────────────────────────────────────────────────────
+.env
+.env.*
+!.env.example
+.venv/
+venv/
+env/
+
+# ── IDEs ──────────────────────────────────────────────────────────────
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# ── Jupyter ───────────────────────────────────────────────────────────
+.ipynb_checkpoints/
+
+# ── OS ────────────────────────────────────────────────────────────────
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ── Metrics & Configs (Keep metrics JSONs while ignoring scratch JSONs) ─
+*.json
+!configs/*.json
+!outputs/metrics/*.json
+!outputs/metrics/*.txt
+
+# ── Logs & Temporary ──────────────────────────────────────────────────
+*.log
+*.tmp
+tmp/
+temp/
+scratch/

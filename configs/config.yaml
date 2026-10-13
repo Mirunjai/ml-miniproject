@@ -1,0 +1,55 @@
+# Structural Damage Recognition — Project Configuration
+# PHI-Net Task 2: Damage State Classification
+
+dataset:
+  # Path to directory containing .npy files
+  # Automatically resolves temp_local/data, data/, or root
+  data_dir: "./temp_local/data"  
+  train_images: "task2_X_train.npy"
+  train_labels: "task2_y_train.npy"
+  test_images: "task2_X_test.npy"
+  test_labels: "task2_y_test.npy"
+  num_classes: 2
+  image_size: [224, 224, 3]
+  class_names:
+    0: "Damaged"
+    1: "Undamaged"
+
+preprocessing:
+  # Original dataset uses Caffe-style BGR mean subtraction
+  caffe_mean_bgr: [103.939, 116.779, 123.68]
+  target_model: "mobilenet_v2"
+
+training:
+  seed: 42
+  val_fraction: 0.2
+  batch_size: 32
+  epochs_frozen: 15
+  epochs_finetune: 10
+  learning_rate_frozen: 0.001
+  learning_rate_finetune: 0.0001
+  dropout_rate: 0.4
+  finetune_layers: 30
+  early_stopping_patience: 5
+  reduce_lr_patience: 3
+  reduce_lr_factor: 0.5
+
+model:
+  architecture: "MobileNetV2"
+  weights: "imagenet"
+  include_top: false
+  input_shape: [224, 224, 3]
+
+output:
+  model_dir: "./models"
+  checkpoint_dir: "./outputs/checkpoints"
+  plots_dir: "./outputs/plots"
+  metrics_dir: "./outputs/metrics"
+  logs_dir: "./outputs/logs"
+
+colab:
+  # Google Drive paths (update after mounting)
+  drive_dataset_dir: "/content/drive/MyDrive/PHI-Net-Dataset"
+  drive_output_dir: "/content/drive/MyDrive/PHI-Net-Output"
+  local_staging_dir: "/content/dataset"
+  use_local_staging: true
